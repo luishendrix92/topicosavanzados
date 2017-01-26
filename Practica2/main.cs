@@ -18,6 +18,17 @@ public partial class PongArea : Form {
     this.Size = new Size(800, 500);
     // Move balls every 1/60 seconds (60 fps)
     animation = new Animation(this, 60);
+    
+    animation.AddBall(200, 200, 90);
+  }
+  
+  // Adds PictureBox to reference-type Form
+  private void RenderBall(int coordX, int coordY) {
+    PictureBox pic = new PictureBox();
+    pic.Image = Image.FromFile("ball.png");
+    pic.Size = new Size(50, 50);
+    pic.Location = new Point(coordX, coordY);
+    this.Controls.Add(pic);
   }
 }
 
@@ -26,6 +37,5 @@ public static class Pelotas {
   public static void Main(string[] args) {
     Application.EnableVisualStyles();
     Application.Run(new PongArea());
-    //Application.DoEvents();
   }
 }
