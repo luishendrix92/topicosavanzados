@@ -2,7 +2,7 @@ using System;
 using System.Windows.Forms;
 
 public static class Physics {
-  public const int THRESHOLD = 3;
+  public const int THRESHOLD = 6;
   
   // A millisecond interval from a Frames-Per-Second value
   public static int FpsToMs(int fps) { return 1000 / fps; }
@@ -24,10 +24,12 @@ public static class Physics {
   // The core of the collision detection logic, this logic is used to
   // change the direction of the ball actors on the canvas area
   public static void HandleCollisions(Actor actor, Form area) {
-    int x    = actor.Entity.Location.X, y    = actor.Entity.Location.Y;
-    int velX = actor.VelocityX,         velY = actor.VelocityY;
-    int rightWall  = area.Size.Width  - actor.Entity.Size.Width - 5;
-    int bottomWall = area.Size.Height - actor.Entity.Size.Height - 25;
+    int x = actor.Entity.Location.X;
+    int y = actor.Entity.Location.Y;
+    int velX = actor.VelocityX;
+    int velY = actor.VelocityY;
+    int rightWall  = area.Size.Width  - actor.Entity.Size.Width  - 6;
+    int bottomWall = area.Size.Height - actor.Entity.Size.Height - 24;
     
     // According to Newtonian Elastic Collition, if the wall conceptually
     // represents an abyssmal mass opposing force, the  ball is then

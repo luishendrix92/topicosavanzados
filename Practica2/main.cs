@@ -14,12 +14,12 @@ public partial class PongArea : Form {
   public PongArea() {
     this.Text = "Bouncing Balls :v";
     this.Size = new Size(800, 800);
-    animation = new Animation(this, 20);
+    animation = new Animation(this, 60);
     
     // Put 8 balls at the center in different directions
     // simulating an incomplete unitary circle (45° directions)
     for (int i = 0; i < 8; i += 1)
-      AddBall(new Point(375, 350), i * 45, 3);
+      AddBall(new Point(375, 350), i * 45, 1);
   }
   
   // Adds PictureBox to reference-type Form as a Ball "Actor"

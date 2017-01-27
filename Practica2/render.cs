@@ -23,16 +23,13 @@ public class Animation {
   // Gets called everytime the fps interval has elapsed
   // moving all the balls in the area to their rightful position
   void MoveActors(Object _sender, EventArgs _event) {
-    Point pos;
-    int velX, velY;
-    
     foreach (var actor in Actors) {
-      pos  = actor.Entity.Location;
-      velX = actor.VelocityX;
-      velY = actor.VelocityY;
-      
       HandleCollisions(actor, area);
-      actor.Entity.Location = Point.Add(pos, new Size(velX, velY));
+      
+      actor.Entity.Location = Point.Add(
+        actor.Entity.Location,
+        new Size(actor.VelocityX, actor.VelocityY)
+      );
     }
   }
 }
