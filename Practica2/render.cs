@@ -1,8 +1,8 @@
-using System;
-using System.Drawing;
-using System.Windows.Forms;
 using System.Collections.Generic;
+using System.Windows.Forms;
+using System.Drawing;
 using static Physics;
+using System;
 
 public class Animation {
   public List<Actor> Actors = new List<Actor>();
@@ -20,8 +20,8 @@ public class Animation {
     animation.Start();
   }
   
-  // Gets called everytime the fps interval has elapsed
-  // moving all the balls in the area to their rightful position
+  // Gets called everytime the fps interval has elapsed moving
+  // all the balls in the area to their rightful position
   void MoveActors(Object _sender, EventArgs _event) {
     foreach (var actor in Actors) {
       HandleCollisions(actor, area);

@@ -1,5 +1,5 @@
-using System;
 using System.Windows.Forms;
+using System;
 
 public static class Physics {
   public const int THRESHOLD = 6;
@@ -37,8 +37,17 @@ public static class Physics {
     bool horizontalCollision = !InRange(x + velX, 0, rightWall);
     bool verticalCollision   = !InRange(y + velY, 0, bottomWall);
     
-    if (horizontalCollision) actor.VelocityX *= (-1);
-    if (verticalCollision)   actor.VelocityY *= (-1);
+    if (horizontalCollision) {
+      BallsToTheWalls
+        .WallCollisionFx(area, actor, "horizontal");
+      actor.VelocityX *= (-1);
+    }
+    
+    if (verticalCollision) {
+      BallsToTheWalls
+        .WallCollisionFx(area, actor, "vertical");
+      actor.VelocityY *= (-1);
+    }
   }
   
   // Converts Degrees to Radians in decimal notation

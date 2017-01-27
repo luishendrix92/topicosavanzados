@@ -1,31 +1,30 @@
-using System;
 using System.ComponentModel;
-using System.Drawing;
 using System.Windows.Forms;
+using System.Drawing;
+using System;
 
-// Compilación en MONO Develop:
-// -----> dmcs -out:p1.exe -r:System.Windows.Forms.dll -r:System.Drawing.dll *.cs
-// Compilación en CSC (.NET):
-// -----> csc /out:binario.exe  *.cs
+// Compilación en MONO Develop para los Linuxeros :'v
+// mcs -out:p1.exe -r:System.Windows.Forms.dll -r:System.Drawing.dll *.cs
 
-public partial class Ventana : Form {
-  public Ventana() {
+// Compilación en CSC (.NET) para Windows:
+// csc /out:p1.exe  *.cs
+
+public partial class Marcianito : Form {
+  public Marcianito() {
     PictureBox pic = new PictureBox();
     pic.Image    = Image.FromFile("marcianito.gif");
     pic.Size     = new Size(128, 190);
-    pic.Location = new Point(336.5, 155);
+    pic.Location = new Point(336, 155);
     this.Controls.Add(pic);
     // ----------------------------------
-    this.Text       = "Práctica 1: PictureBox";
+    this.Text       = "Marcianito 100% Real No Fake";
     this.Size       = new Size(800, 500);
     this.KeyPreview = true;
-    this.KeyDown  += new KeyEventHandler(Ventana_KeyDown);
+    this.KeyDown  += new KeyEventHandler(Marcianito_KeyDown);
   }
   
-  // ===========================================================
-  // MÉTODOS PARA MANEJAR EL MOVIMIENTO DEL PICTUREBOX
-  // ===========================================================
-  void Ventana_KeyDown(object sender, KeyEventArgs e) {
+  // Handle a pressed key event
+  void Marcianito_KeyDown(object sender, KeyEventArgs e) {
     var pic = this.Controls[0];
     var coords = pic.Location;
     int SPEED = 5;
@@ -37,7 +36,7 @@ public partial class Ventana : Form {
         }
         break;
       case Keys.Down:
-        if (coords.Y + SPEED <= 285) {
+        if (coords.Y + SPEED <= this.Size.Height - pic.Size.Height) {
           pic.Location = Point.Add(coords, new Size(0, SPEED));
         }
         break;
@@ -47,7 +46,7 @@ public partial class Ventana : Form {
         }
         break;
       case Keys.Right:
-        if (coords.X + SPEED <= 667) {
+        if (coords.X + SPEED <= this.Size.Width - pic.Size.Width) {
           pic.Location = Point.Add(coords, new Size(SPEED, 0));
         }
         break;
@@ -56,15 +55,9 @@ public partial class Ventana : Form {
 }
 
 public class Principal {
-  // ===========================================================
-  // MÉTODO PRINCIPAL QUE SE EJECUTA AL CARGAR EL PROGRAMA
-  // -----------------------------------------------------------
-  // [STAThread] significa que se usará sólo un hilo para evitar
-  // conflictos con Windows.Forms, no soporta el multi-threading
-  // =========================================================== 
   [STAThread]
   public static void Main() {
     Application.EnableVisualStyles();
-    Application.Run(new Ventana());
+    Application.Run(new Marcianito());
   }
 }
