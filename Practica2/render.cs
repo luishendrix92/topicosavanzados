@@ -1,5 +1,4 @@
 using System;
-using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Collections.Generic;
@@ -23,19 +22,16 @@ public class Animation {
   
   // Gets called everytime the fps interval has elapsed
   // moving all the balls in the area to their rightful position
-  private void MoveActors(Object _sender, EventArgs _event) {
+  void MoveActors(Object _sender, EventArgs _event) {
     Point pos;
-    int x, y, velX, velY;
+    int velX, velY;
     
     foreach (var actor in Actors) {
       pos  = actor.Entity.Location;
-      x    = pos.X;
-      y    = pos.Y;
       velX = actor.VelocityX;
       velY = actor.VelocityY;
       
       HandleCollisions(actor, area);
-      
       actor.Entity.Location = Point.Add(pos, new Size(velX, velY));
     }
   }

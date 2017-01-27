@@ -1,29 +1,24 @@
 using System;
-using System.ComponentModel;
-using System.Drawing;
 using System.Windows.Forms;
-using System.Collections.Generic;
 
 public static class Physics {
-  public const int THRESHOLD = 1;
+  public const int THRESHOLD = 3;
   
   // A millisecond interval from a Frames-Per-Second value
-  public static int FpsToMs(int fps) {
-    return 1000 / fps;
-  }
+  public static int FpsToMs(int fps) { return 1000 / fps; }
   
   // Amount of pixels to be added to the X axis using the consine
   public static int HorizontalVelocity(double angle, int speed) {
     double increment = Math.Cos(DegToRad(angle)) * THRESHOLD;
     
-    return (int) Math.Ceiling(Math.Round(increment, 4)) * speed;
+    return ((int) Math.Round(increment)) * speed;
   }
   
   // Pixels to be added to the Y axis (inverted) using the sine
   public static int VerticalVelocity(double angle, int speed) {
     double increment = Math.Sin(DegToRad(angle)) * THRESHOLD;
     
-    return (int) Math.Ceiling(Math.Round(increment, 2)) * speed * (-1);
+    return ((int) Math.Round(increment)) * speed * (-1);
   }
   
   // The core of the collision detection logic, this logic is used to
@@ -45,12 +40,8 @@ public static class Physics {
   }
   
   // Converts Degrees to Radians in decimal notation
-  private static double DegToRad(double angle) {
-    return (angle * Math.PI) / 180;
-  }
+  static double DegToRad(double angle) { return (angle * Math.PI) / 180; }
   
   // Inclusive range check, true if n is in range [a, b]
-  private static bool InRange(int n, int a, int b) {
-    return (n >= a) && (n <= b);
-  }
+  static bool InRange(int n, int a, int b) { return (n >= a) && (n <= b); }
 }
