@@ -11,3 +11,14 @@ Tres imágenes que interactúan con la forma.
 - Si la imagen 2 choca con la 3, las imagenes deben cambiar (*todas*).
 - Si la 2 choca con la 4, deben obtener la imagen original.
 - Si la 3 choca con la 4, enviar mensaje.
+
+```
+.-------------------------------.
+|                      4        |
+|             1                 |
+|         2                     |
+|                               |
+|                               |
+|  3                            |
+'...............................'
+```
