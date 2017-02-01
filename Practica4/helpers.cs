@@ -1,8 +1,12 @@
 using System.Windows.Forms;
 using System.Drawing;
+using System.Timers;
 using System;
 
 public static class Helpers {
+  public static System.Timers.Timer timeout;
+  public delegate void Callback();
+  
   // A millisecond interval from a Frames-Per-Second value
   public static int FpsToMs(int fps) {
     return 1000 / fps;
@@ -25,5 +29,21 @@ public static class Helpers {
         ((b.X - a.X) * (b.X - a.X))
       )
     );
+  }
+  
+  public static void SetTimeout(int lapse, Callback action, int repeat = 1) {
+    timeout = null;
+    timeout = new System.Timers.Timer();
+    
+    timeout.Enabled  = true;
+    timeout.Interval = lapse;
+    timeout.Elapsed += (_source, _e) => {
+      action();
+      repeat--;
+      
+      if (repeat == 0) timeout.Stop();
+    };
+    
+    timeout.Start();
   }
 }

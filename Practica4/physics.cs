@@ -4,7 +4,7 @@ using static Helpers;
 using System;
 
 public static class Physics {
-  public const int THRESHOLD = 6;
+  public const int THRESHOLD = 3;
   
   // Amount of pixels to be added to the X axis using the consine
   public static int HorizontalVelocity(double angle, int speed) {
@@ -37,6 +37,8 @@ public static class Physics {
     
     actor.VelocityX *= horizontalCollision? (-1) : 1;
     actor.VelocityY *= verticalCollision? (-1) : 1;
+    
+    // PubSub.Emit($"ball #{id} touches wall", actor, area);
     
     if (wallCollision && id == 1)
       PubSub.Emit("ball #1 touches wall", actor, area);

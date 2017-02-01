@@ -1,4 +1,5 @@
 using System.Windows.Forms;
+using static Helpers;
 using System.Drawing;
 
 public partial class Window : Form {
@@ -7,13 +8,14 @@ public partial class Window : Form {
   
   // Constructor :: Sets properties and renders initial controls
   public Window() {
-    this.Text = "Práctica #4 Papu";
-    this.Size = new Size(800, 600);
-    animation = new Animation(this, 60);
+    this.Text      = "Práctica #4 Papu";
+    this.Size      = new Size(800, 600);
+    this.BackColor = Color.Gray;
+    animation      = new Animation(this, 60);
     
+    AddBall(new Point(100, 280), 60, 1);
     AddBall(new Point(370, 280), 30, 1);
-    AddBall(new Point(370, 280), 150, 2);
-    AddBall(new Point(370, 280), 210, 3);
+    AddBall(new Point(400, 280), 210, 1);
     
     SubscribeToEvents();
   }
@@ -31,15 +33,23 @@ public partial class Window : Form {
   
   void SubscribeToEvents() {
     PubSub.Subscribe("ball #1 touches wall", (actor, area) => {
-      //
+      this.BackColor = Color.Blue;
+      
+      SetTimeout(500, () => {
+        this.BackColor = Color.Gray;
+      });
     });
     
     PubSub.Subscribe("ball #2 touches wall", (actor, area) => {
-      //
+      this.BackColor = Color.Purple;
     });
     
     PubSub.Subscribe("ball #3 touches wall", (actor, area) => {
-      //
+      SetTimeout(20, () => {
+        this.BackColor = Color.Gray;
+        System.Threading.Thread.Sleep(10);
+        this.BackColor = Color.Blue;
+      }, 5);
     });
   }
 }
