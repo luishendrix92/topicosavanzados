@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Drawing;
 using static Physics;
+using static Helpers;
 using System;
 
 public class Animation {
@@ -23,25 +24,14 @@ public class Animation {
   // Gets called everytime the fps interval has elapsed moving
   // all the balls in the area to their rightful position
   void MoveActors(Object _sender, EventArgs _event) {
-    foreach (var actor in Actors) {
-      HandleCollisions(actor, area);
+    for (int id = 0; id < Actors.Count; id += 1) {
+      WallCollisions(Actors[id], area, id + 1);
+      ActorCollisions(Actors, area, id + 1);
       
-      actor.Entity.Location = Point.Add(
-        actor.Entity.Location,
-        new Size(actor.VelocityX, actor.VelocityY)
+      Actors[id].Entity.Location = Point.Add(
+        Actors[id].Entity.Location,
+        new Size(Actors[id].VelocityX, Actors[id].VelocityY)
       );
     }
-  }
-}
-
-public class Actor {
-  public int VelocityX, VelocityY;
-  public Control Entity;
-  
-  // Constructor :: Adds the reference to the PictureBox
-  public Actor(Control ball, double angle, int speed) {
-    this.VelocityX = HorizontalVelocity(angle, speed);
-    this.VelocityY = VerticalVelocity(angle, speed);
-    this.Entity    = ball;
   }
 }

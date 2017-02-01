@@ -1,11 +1,10 @@
+using System.Collections.Generic;
 using System.Windows.Forms;
+using static Helpers;
 using System;
 
 public static class Physics {
   public const int THRESHOLD = 6;
-  
-  // A millisecond interval from a Frames-Per-Second value
-  public static int FpsToMs(int fps) { return 1000 / fps; }
   
   // Amount of pixels to be added to the X axis using the consine
   public static int HorizontalVelocity(double angle, int speed) {
@@ -21,38 +20,36 @@ public static class Physics {
     return ((int) Math.Round(increment)) * speed * (-1);
   }
   
-  // The core of the collision detection logic, this logic is used to
-  // change the direction of the ball actors on the canvas area
-  public static void HandleCollisions(Actor actor, Form area) {
-    int x = actor.Entity.Location.X;
-    int y = actor.Entity.Location.Y;
+  // Change direction of the balls when it collides against a wall
+  // and notify about certain balls to whomever is interested
+  public static void WallCollisions(Actor actor, Form area, int id) {
     int velX = actor.VelocityX;
     int velY = actor.VelocityY;
-    int rightWall  = area.Size.Width  - actor.Entity.Size.Width  - 6;
-    int bottomWall = area.Size.Height - actor.Entity.Size.Height - 24;
+    int rightWall  = area.Size.Width  - actor.Width  - 6;
+    int bottomWall = area.Size.Height - actor.Height - 24;
     
     // According to Newtonian Elastic Collition, if the wall conceptually
     // represents an abyssmal mass opposing force, the  ball is then
     // flipped (-vX and or -vY) to move in the opposite direction.
-    bool horizontalCollision = !InRange(x + velX, 0, rightWall);
-    bool verticalCollision   = !InRange(y + velY, 0, bottomWall);
+    bool horizontalCollision = !InRange(actor.X + velX, 0, rightWall);
+    bool verticalCollision   = !InRange(actor.Y + velY, 0, bottomWall);
+    bool wallCollision       = horizontalCollision || verticalCollision;
     
-    if (horizontalCollision) {
-      BallsToTheWalls
-        .WallCollisionFx(area, actor, "horizontal");
-      actor.VelocityX *= (-1);
-    }
+    actor.VelocityX *= horizontalCollision? (-1) : 1;
+    actor.VelocityY *= verticalCollision? (-1) : 1;
     
-    if (verticalCollision) {
-      BallsToTheWalls
-        .WallCollisionFx(area, actor, "vertical");
-      actor.VelocityY *= (-1);
-    }
+    if (wallCollision && id == 1)
+      PubSub.Emit("ball #1 touches wall", actor, area);
+    else if (wallCollision && id == 2)
+      PubSub.Emit("ball #2 touches wall", actor, area);
+    else if (wallCollision && id == 3)
+      PubSub.Emit("ball #3 touches wall", actor, area);
   }
   
-  // Converts Degrees to Radians in decimal notation
-  static double DegToRad(double angle) { return (angle * Math.PI) / 180; }
-  
-  // Inclusive range check, true if n is in range [a, b]
-  static bool InRange(int n, int a, int b) { return (n >= a) && (n <= b); }
+  // Superposition of actors as described by the distance between them being
+  // less than the sum of their radius. Change the direction to the exact
+  // opposite side on both X and Y and also notify about it.
+  public static void ActorCollisions(List<Actor> actors, Form area, int id) {
+    
+  }
 }
