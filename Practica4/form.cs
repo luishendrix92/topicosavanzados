@@ -1,6 +1,7 @@
 using System.Windows.Forms;
-using static Helpers;
 using System.Drawing;
+using static Helpers;
+using static PubSub;
 
 public partial class Window : Form {
   private const int RADIUS = 40;
@@ -14,9 +15,9 @@ public partial class Window : Form {
     this.BackColor = Color.Gray;
     animation      = new Animation(this, 60);
     
-    AddBall(new Point(100, 280), 60, SPEED);
-    AddBall(new Point(370, 280), 30, SPEED);
-    AddBall(new Point(400, 280), 210, SPEED);
+    AddBall(new Point(600, 280), 60, SPEED);
+    AddBall(new Point(570, 180), 150, SPEED);
+    AddBall(new Point(400, 480), 210, SPEED);
     
     SubscribeToEvents();
   }
@@ -34,28 +35,51 @@ public partial class Window : Form {
   
   // Listen to collision events and act accordingly
   void SubscribeToEvents() {
-    PubSub.Subscribe("ball #1 touched wall", () => {
+    Subscribe("ball #1 touched wall", () => {
       this.BackColor = Color.Gray;
       
       SetTimeout(500, () => {
         this.BackColor = Color.White;
       });
     });
-    
-    PubSub.Subscribe("ball #2 touched wall", () => {
+
+    Subscribe("ball #2 touched wall", () => {
       this.BackColor = Color.Yellow;
     });
-    
-    PubSub.Subscribe("ball #3 touched wall", () => {
+
+    Subscribe("ball #3 touched wall", () => {
       SetTimeout(200, () => {
         this.BackColor = Color.Gray;
         System.Threading.Thread.Sleep(100);
         this.BackColor = Color.White;
       }, 2);
     });
-    
-    PubSub.Subscribe("#1 and #3 collided", () => {
-      AddBall(new Point(150, 250), 45, 0);
+
+    Subscribe("#1 collided #2", () => {
+      if (animation.Actors.Count == 4) {
+        animation.Actors[3].VelocityX = 4;
+        animation.Actors[3].VelocityY = 4;
+      }
     });
+
+    Subscribe("#1 collided #3", () => {
+      if (animation.Actors.Count == 3) {
+        AddBall(new Point(150, 250), 45, 0);
+      }
+    });
+    
+    Subscribe("#3 collided #4", () => MessageBox.Show("¡¡#3 vs #4!!"));
+    Subscribe("#2 collided #4", ChangeImage("happy"));
+    Subscribe("#2 collided #3", ChangeImage("sad"));
+    Subscribe("all collided", Application.Exit);
+  }
+  
+  Action ChangeImage(string happyOrSad) {
+    return () => {
+      foreach (Actor actor in animation.Actors) {
+        (actor.Entity as PictureBox).Image
+          = Image.FromFile($"{happyOrSad}.png");
+      }
+    };
   }
 }

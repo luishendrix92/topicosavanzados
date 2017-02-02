@@ -12,11 +12,11 @@ public class Animation {
   
   // Constructor :: Initializes the interval animation
   public Animation(Form area, int fps) {
-    this.area          = area;
     animation          = new System.Windows.Forms.Timer();
     animation.Tick    += new EventHandler(MoveActors);
-    animation.Enabled  = true;
     animation.Interval = FpsToMs(fps);
+    animation.Enabled  = true;
+    this.area          = area;
     
     animation.Start();
   }
@@ -25,8 +25,8 @@ public class Animation {
   // all the balls in the area to their rightful position
   void MoveActors(Object _sender, EventArgs _event) {
     for (int id = 0; id < Actors.Count; id += 1) {
-      ActorCollisions(Actors, area, id + 1);
-      WallCollisions(Actors[id], area, id + 1);
+      WallCollisions(Actors[id], area, id);
+      ActorCollisions(Actors, area, id);
       
       Actors[id].Entity.Location = Point.Add(
         Actors[id].Entity.Location,
