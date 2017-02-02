@@ -22,17 +22,16 @@ public static class Helpers {
     return (n >= a) && (n <= b);
   }
   
-  public static double distance(Point a, Point b) {
+  public static double Distance(Point a, Point b) {
     return (double) Math.Abs(
-      Math.Sqrt(
-        ((b.Y - a.Y) * (b.Y - a.Y)) +
-        ((b.X - a.X) * (b.X - a.X))
-      )
+      Math.Sqrt(((b.Y - a.Y) * (b.Y - a.Y)) + ((b.X - a.X) * (b.X - a.X)))
     );
   }
   
+  // Receives an action and schedules it to happen within the next "lapse"
+  // and if a repeat parameter was given, do this n times.
   public static void SetTimeout(int lapse, Callback action, int repeat = 1) {
-    timeout = null;
+    if (timeout != null) timeout.Stop();
     timeout = new System.Timers.Timer();
     
     timeout.Enabled  = true;

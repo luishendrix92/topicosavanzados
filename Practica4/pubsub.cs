@@ -4,10 +4,11 @@ using System.Drawing;
 using System;
 
 public static class PubSub {
-  public delegate void Callback(Actor actor, Form area);
+  public delegate void Callback();
   private static Dictionary<string, List<Callback>> events =
     new Dictionary<string, List<Callback>>();
   
+  // Receive and action and push it to a list in the topic
   public static void Subscribe(string eventName, Callback action) {
     if (!events.ContainsKey(eventName))
       events.Add(eventName, new List<Callback>());
@@ -15,9 +16,10 @@ public static class PubSub {
     events[eventName].Add(action);
   }
   
-  public static void Emit(string eventName, Actor actor, Form area) {
+  // Notify about something to whomever is subscribed to the event
+  public static void Emit(string eventName) {
     if (events.ContainsKey(eventName))
-      foreach (Callback subscriber in events[eventName])
-        subscriber(actor, area);
+      foreach (Callback action in events[eventName])
+        action();
   }
 }
