@@ -10,7 +10,7 @@ public partial class Window : Form {
   
   // Constructor :: Sets properties and renders initial controls
   public Window() {
-    this.Text      = "Práctica #4 Papu";
+    this.Text      = "Práctica #4";
     this.Size      = new Size(900, 600);
     this.BackColor = Color.Gray;
     animation      = new Animation(this, 60);
@@ -62,13 +62,13 @@ public partial class Window : Form {
       }
     });
 
-    Subscribe("#1 collided #3", () => {
+    /*Subscribe("#1 collided #3", () => {
       if (animation.Actors.Count == 3) {
         AddBall(new Point(150, 250), 45, 0);
       }
-    });
+    });*/
     
-    Subscribe("#3 collided #4", () => MessageBox.Show("¡¡#3 vs #4!!"));
+    //Subscribe("#3 collided #4", () => MessageBox.Show("¡¡#3 vs #4!!"));
     Subscribe("#2 collided #4", ChangeImage("happy"));
     Subscribe("#2 collided #3", ChangeImage("sad"));
     Subscribe("all collided", Application.Exit);
