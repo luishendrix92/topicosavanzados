@@ -3,7 +3,7 @@ using System;
 
 /* Compile on Linux:
  * ============================================================
- * mcs -out:calc.exe -r:CalcParse/CalcParse.dll calc.cs
+ * mcs -out:calc.exe -r:CalcParse.dll calc.cs
  *************************************************************/
 
 class Program {
