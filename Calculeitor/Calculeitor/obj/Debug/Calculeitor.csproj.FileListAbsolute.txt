@@ -1,0 +1,13 @@
+C:\Users\luish\Documents\Visual Studio 2015\Projects\Calculeitor\Calculeitor\bin\Debug\Calculeitor.exe.config
+C:\Users\luish\Documents\Visual Studio 2015\Projects\Calculeitor\Calculeitor\bin\Debug\Calculeitor.exe
+C:\Users\luish\Documents\Visual Studio 2015\Projects\Calculeitor\Calculeitor\bin\Debug\Calculeitor.pdb
+C:\Users\luish\Documents\Visual Studio 2015\Projects\Calculeitor\Calculeitor\obj\Debug\Calculeitor.csprojResolveAssemblyReference.cache
+C:\Users\luish\Documents\Visual Studio 2015\Projects\Calculeitor\Calculeitor\obj\Debug\Calculeitor.Properties.Resources.resources
+C:\Users\luish\Documents\Visual Studio 2015\Projects\Calculeitor\Calculeitor\obj\Debug\Calculeitor.csproj.GenerateResource.Cache
+C:\Users\luish\Documents\Visual Studio 2015\Projects\Calculeitor\Calculeitor\obj\Debug\Calculeitor.exe
+C:\Users\luish\Documents\Visual Studio 2015\Projects\Calculeitor\Calculeitor\obj\Debug\Calculeitor.pdb
+C:\Users\luish\Documents\Visual Studio 2015\Projects\Calculeitor\Calculeitor\obj\Debug\Calculeitor.FormCalc.resources
+C:\Users\luish\Documents\Visual Studio 2015\Projects\Calculeitor\Calculeitor\bin\Debug\CalcParse.dll
+C:\Users\luish\Documents\Visual Studio 2015\Projects\Calculeitor\Calculeitor\bin\Debug\en\Calculeitor.resources.dll
+C:\Users\luish\Documents\Visual Studio 2015\Projects\Calculeitor\Calculeitor\obj\Debug\Calculeitor.FormCalc.en.resources
+C:\Users\luish\Documents\Visual Studio 2015\Projects\Calculeitor\Calculeitor\obj\Debug\en\Calculeitor.resources.dll
