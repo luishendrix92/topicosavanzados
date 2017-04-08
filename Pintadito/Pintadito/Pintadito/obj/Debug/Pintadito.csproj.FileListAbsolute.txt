@@ -7,10 +7,5 @@ C:\Users\luish\Documents\code\topicosavanzadosITT\Pintadito\Pintadito\Pintadito\
 C:\Users\luish\Documents\code\topicosavanzadosITT\Pintadito\Pintadito\Pintadito\obj\Debug\Pintadito.exe
 C:\Users\luish\Documents\code\topicosavanzadosITT\Pintadito\Pintadito\Pintadito\obj\Debug\Pintadito.pdb
 C:\Users\luish\Documents\code\topicosavanzadosITT\Pintadito\Pintadito\Pintadito\obj\Debug\Pintadito.csprojResolveAssemblyReference.cache
-C:\Users\luish\Documents\code\topicosavanzadosITT\Pintadito\Pintadito\Pintadito\bin\Debug\bg_ballena.jpg
-C:\Users\luish\Documents\code\topicosavanzadosITT\Pintadito\Pintadito\Pintadito\bin\Debug\bg_arbol.jpg
-C:\Users\luish\Documents\code\topicosavanzadosITT\Pintadito\Pintadito\Pintadito\bin\Debug\bg_cars.jpg
-C:\Users\luish\Documents\code\topicosavanzadosITT\Pintadito\Pintadito\Pintadito\bin\Debug\bg_homer.jpg
-C:\Users\luish\Documents\code\topicosavanzadosITT\Pintadito\Pintadito\Pintadito\bin\Debug\bg_minions.jpg
-C:\Users\luish\Documents\code\topicosavanzadosITT\Pintadito\Pintadito\Pintadito\bin\Debug\bg_potter.jpg
-C:\Users\luish\Documents\code\topicosavanzadosITT\Pintadito\Pintadito\Pintadito\bin\Debug\bg_rana.gif
+C:\Users\luish\Documents\code\topicosavanzadosITT\Pintadito\Pintadito\Pintadito\bin\Debug\clojure-logo.png
+C:\Users\luish\Documents\code\topicosavanzadosITT\Pintadito\Pintadito\Pintadito\bin\Debug\carro.png

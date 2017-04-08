@@ -23,8 +23,6 @@
     /// the contents of this method with the code editor.
     /// </summary>
     private void InitializeComponent() {
-      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-      this.draw_area = new System.Windows.Forms.Panel();
       this.pencil_black = new System.Windows.Forms.Button();
       this.pencil_pink = new System.Windows.Forms.Button();
       this.pencil_violet = new System.Windows.Forms.Button();
@@ -44,28 +42,18 @@
       this.label1 = new System.Windows.Forms.Label();
       this.label2 = new System.Windows.Forms.Label();
       this.pencil_red = new System.Windows.Forms.Button();
-      this.btn_frog = new System.Windows.Forms.Button();
-      this.btn_potter = new System.Windows.Forms.Button();
-      this.btn_minions = new System.Windows.Forms.Button();
-      this.btn_homer = new System.Windows.Forms.Button();
+      this.btn_heart = new System.Windows.Forms.Button();
+      this.btn_satellite = new System.Windows.Forms.Button();
+      this.btn_chick = new System.Windows.Forms.Button();
       this.btn_cars = new System.Windows.Forms.Button();
-      this.btn_whale = new System.Windows.Forms.Button();
-      this.btn_tree = new System.Windows.Forms.Button();
+      this.btn_plant = new System.Windows.Forms.Button();
+      this.btn_oldcar = new System.Windows.Forms.Button();
+      this.draw_area = new System.Windows.Forms.PictureBox();
+      this.button1 = new System.Windows.Forms.Button();
       ((System.ComponentModel.ISupportInitialize)(this.opacity_control)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.radius_control)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.draw_area)).BeginInit();
       this.SuspendLayout();
-      // 
-      // draw_area
-      // 
-      this.draw_area.BackColor = System.Drawing.Color.White;
-      this.draw_area.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("draw_area.BackgroundImage")));
-      this.draw_area.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-      this.draw_area.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.draw_area.Location = new System.Drawing.Point(165, 12);
-      this.draw_area.Name = "draw_area";
-      this.draw_area.Size = new System.Drawing.Size(722, 523);
-      this.draw_area.TabIndex = 1;
-      this.draw_area.MouseMove += new System.Windows.Forms.MouseEventHandler(this.draw_area_MouseMove);
       // 
       // pencil_black
       // 
@@ -251,41 +239,32 @@
       this.pencil_red.Text = "Crimson Red";
       this.pencil_red.UseVisualStyleBackColor = true;
       // 
-      // btn_frog
+      // btn_heart
       // 
-      this.btn_frog.Location = new System.Drawing.Point(909, 188);
-      this.btn_frog.Name = "btn_frog";
-      this.btn_frog.Size = new System.Drawing.Size(75, 23);
-      this.btn_frog.TabIndex = 27;
-      this.btn_frog.Text = "Frog";
-      this.btn_frog.UseVisualStyleBackColor = true;
+      this.btn_heart.Location = new System.Drawing.Point(909, 157);
+      this.btn_heart.Name = "btn_heart";
+      this.btn_heart.Size = new System.Drawing.Size(75, 23);
+      this.btn_heart.TabIndex = 26;
+      this.btn_heart.Text = "Harry Potter";
+      this.btn_heart.UseVisualStyleBackColor = true;
       // 
-      // btn_potter
+      // btn_satellite
       // 
-      this.btn_potter.Location = new System.Drawing.Point(909, 157);
-      this.btn_potter.Name = "btn_potter";
-      this.btn_potter.Size = new System.Drawing.Size(75, 23);
-      this.btn_potter.TabIndex = 26;
-      this.btn_potter.Text = "Harry Potter";
-      this.btn_potter.UseVisualStyleBackColor = true;
+      this.btn_satellite.Location = new System.Drawing.Point(909, 128);
+      this.btn_satellite.Name = "btn_satellite";
+      this.btn_satellite.Size = new System.Drawing.Size(75, 23);
+      this.btn_satellite.TabIndex = 25;
+      this.btn_satellite.Text = "Minions";
+      this.btn_satellite.UseVisualStyleBackColor = true;
       // 
-      // btn_minions
+      // btn_chick
       // 
-      this.btn_minions.Location = new System.Drawing.Point(909, 128);
-      this.btn_minions.Name = "btn_minions";
-      this.btn_minions.Size = new System.Drawing.Size(75, 23);
-      this.btn_minions.TabIndex = 25;
-      this.btn_minions.Text = "Minions";
-      this.btn_minions.UseVisualStyleBackColor = true;
-      // 
-      // btn_homer
-      // 
-      this.btn_homer.Location = new System.Drawing.Point(909, 99);
-      this.btn_homer.Name = "btn_homer";
-      this.btn_homer.Size = new System.Drawing.Size(75, 23);
-      this.btn_homer.TabIndex = 24;
-      this.btn_homer.Text = "Homer";
-      this.btn_homer.UseVisualStyleBackColor = true;
+      this.btn_chick.Location = new System.Drawing.Point(909, 99);
+      this.btn_chick.Name = "btn_chick";
+      this.btn_chick.Size = new System.Drawing.Size(75, 23);
+      this.btn_chick.TabIndex = 24;
+      this.btn_chick.Text = "Homer";
+      this.btn_chick.UseVisualStyleBackColor = true;
       // 
       // btn_cars
       // 
@@ -296,36 +275,58 @@
       this.btn_cars.Text = "McQueen";
       this.btn_cars.UseVisualStyleBackColor = true;
       // 
-      // btn_whale
+      // btn_plant
       // 
-      this.btn_whale.Location = new System.Drawing.Point(909, 41);
-      this.btn_whale.Name = "btn_whale";
-      this.btn_whale.Size = new System.Drawing.Size(75, 23);
-      this.btn_whale.TabIndex = 22;
-      this.btn_whale.Text = "Whale";
-      this.btn_whale.UseVisualStyleBackColor = true;
+      this.btn_plant.Location = new System.Drawing.Point(909, 41);
+      this.btn_plant.Name = "btn_plant";
+      this.btn_plant.Size = new System.Drawing.Size(75, 23);
+      this.btn_plant.TabIndex = 22;
+      this.btn_plant.Text = "Whale";
+      this.btn_plant.UseVisualStyleBackColor = true;
       // 
-      // btn_tree
+      // btn_oldcar
       // 
-      this.btn_tree.Location = new System.Drawing.Point(909, 12);
-      this.btn_tree.Name = "btn_tree";
-      this.btn_tree.Size = new System.Drawing.Size(75, 23);
-      this.btn_tree.TabIndex = 21;
-      this.btn_tree.Text = "Tree";
-      this.btn_tree.UseVisualStyleBackColor = true;
+      this.btn_oldcar.Location = new System.Drawing.Point(909, 12);
+      this.btn_oldcar.Name = "btn_oldcar";
+      this.btn_oldcar.Size = new System.Drawing.Size(75, 23);
+      this.btn_oldcar.TabIndex = 21;
+      this.btn_oldcar.Text = "Tree";
+      this.btn_oldcar.UseVisualStyleBackColor = true;
+      // 
+      // draw_area
+      // 
+      this.draw_area.BackColor = System.Drawing.Color.White;
+      this.draw_area.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+      this.draw_area.Location = new System.Drawing.Point(165, 12);
+      this.draw_area.Name = "draw_area";
+      this.draw_area.Size = new System.Drawing.Size(722, 523);
+      this.draw_area.TabIndex = 0;
+      this.draw_area.TabStop = false;
+      this.draw_area.MouseMove += new System.Windows.Forms.MouseEventHandler(this.draw_area_MouseMove);
+      // 
+      // button1
+      // 
+      this.button1.Location = new System.Drawing.Point(909, 245);
+      this.button1.Name = "button1";
+      this.button1.Size = new System.Drawing.Size(75, 23);
+      this.button1.TabIndex = 27;
+      this.button1.Text = "Save";
+      this.button1.UseVisualStyleBackColor = true;
+      this.button1.Click += new System.EventHandler(this.button1_Click);
       // 
       // Form1
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(996, 571);
-      this.Controls.Add(this.btn_frog);
-      this.Controls.Add(this.btn_potter);
-      this.Controls.Add(this.btn_minions);
-      this.Controls.Add(this.btn_homer);
+      this.Controls.Add(this.button1);
+      this.Controls.Add(this.draw_area);
+      this.Controls.Add(this.btn_heart);
+      this.Controls.Add(this.btn_satellite);
+      this.Controls.Add(this.btn_chick);
       this.Controls.Add(this.btn_cars);
-      this.Controls.Add(this.btn_whale);
-      this.Controls.Add(this.btn_tree);
+      this.Controls.Add(this.btn_plant);
+      this.Controls.Add(this.btn_oldcar);
       this.Controls.Add(this.pencil_red);
       this.Controls.Add(this.label2);
       this.Controls.Add(this.label1);
@@ -339,7 +340,6 @@
       this.Controls.Add(this.pencil_blue);
       this.Controls.Add(this.pencil_navy);
       this.Controls.Add(this.cleaner);
-      this.Controls.Add(this.draw_area);
       this.Controls.Add(this.pencil_white);
       this.Controls.Add(this.pencil_silver);
       this.Controls.Add(this.pencil_gold);
@@ -350,13 +350,13 @@
       this.Text = "Form1";
       ((System.ComponentModel.ISupportInitialize)(this.opacity_control)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.radius_control)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.draw_area)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
     }
 
     #endregion
-    private System.Windows.Forms.Panel draw_area;
     private System.Windows.Forms.Button pencil_black;
     private System.Windows.Forms.Button pencil_pink;
     private System.Windows.Forms.Button pencil_violet;
@@ -376,13 +376,14 @@
     private System.Windows.Forms.Label label1;
     private System.Windows.Forms.Label label2;
     private System.Windows.Forms.Button pencil_red;
-    private System.Windows.Forms.Button btn_frog;
-    private System.Windows.Forms.Button btn_potter;
-    private System.Windows.Forms.Button btn_minions;
-    private System.Windows.Forms.Button btn_homer;
+    private System.Windows.Forms.Button btn_heart;
+    private System.Windows.Forms.Button btn_satellite;
+    private System.Windows.Forms.Button btn_chick;
     private System.Windows.Forms.Button btn_cars;
-    private System.Windows.Forms.Button btn_whale;
-    private System.Windows.Forms.Button btn_tree;
+    private System.Windows.Forms.Button btn_plant;
+    private System.Windows.Forms.Button btn_oldcar;
+    private System.Windows.Forms.PictureBox draw_area;
+    private System.Windows.Forms.Button button1;
   }
 }
 

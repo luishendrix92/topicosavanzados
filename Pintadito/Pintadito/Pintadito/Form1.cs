@@ -3,18 +3,16 @@ using static Pintadito.State;
 using System.Windows.Forms;
 using System.Drawing;
 using System;
+using System.Drawing.Imaging;
 
 namespace Pintadito {
   public partial class Form1 : Form {
-    Graphics canvas;
-
     public Form1() {
       InitializeComponent();
 
-      canvas = draw_area.CreateGraphics();
-      canvas.SmoothingMode = SmoothingMode.AntiAlias;
+      Bitmap initImg = new Bitmap(draw_area.Width, draw_area.Height);
+      draw_area.Image = initImg;
 
-      draw_area.BackColor = Color.FromArgb(100, 0, 0, 0);
       draw_area.MouseDown += (sender, e) => IsDrawing = true;
       draw_area.MouseUp += (sender, e) => IsDrawing = false;
 
@@ -33,13 +31,12 @@ namespace Pintadito {
       pencil_yellow.Click += SetColor(Color.Yellow);
       pencil_red.Click += SetColor(Color.Red);
 
-      btn_cars.Click += SetImg("bg_cars.jpg");
-      btn_frog.Click += SetImg("bg_rana.gif");
-      btn_homer.Click += SetImg("bg_homer.jpg");
-      btn_minions.Click += SetImg("bg_minions.jpg");
-      btn_potter.Click += SetImg("bg_potter.jpg");
-      btn_tree.Click += SetImg("bg_arbol.jpg");
-      btn_whale.Click += SetImg("bg_ballena.jpg");
+      btn_cars.Click += SetImg("cars.png");
+      btn_chick.Click += SetImg("pollo.png");
+      btn_heart.Click += SetImg("tacos.png");
+      btn_oldcar.Click += SetImg("carro.png");
+      btn_plant.Click += SetImg("planta.png");
+      btn_satellite.Click += SetImg("satelite.png");
 
       opacity_control.ValueChanged += (sender, e) =>
         ChangeOpacity((int) opacity_control.Value * 255 / 100);
@@ -53,33 +50,53 @@ namespace Pintadito {
 
     private EventHandler SetImg(string filename) =>
       (sender, e) => {
-        draw_area.BackgroundImage = Image.FromFile(filename);
+        if (filename == CurrentImg) {
+          using (Graphics g = Graphics.FromImage(draw_area.Image)) {
+            g.DrawImage(
+              Image.FromFile(filename),
+              new Rectangle(0, 0, 722, 523),
+              new Rectangle(0, 0, 722, 523),
+              GraphicsUnit.Pixel
+            );
+
+            g.SmoothingMode = SmoothingMode.AntiAlias;
+          }
+        } else {
+          draw_area.Image = Image.FromFile(filename);
+        }
+
+        draw_area.Invalidate();
+        CurrentImg = filename;
       };
 
     private void draw_area_MouseMove(object sender, MouseEventArgs e) {
       if (IsDrawing) {
-        canvas.FillEllipse(
-          AppBrush,
-          e.X - (BrushRadius / 2),
-          e.Y - (BrushRadius / 2),
-          BrushRadius,
-          BrushRadius
-        );
+        using (Graphics g = Graphics.FromImage(draw_area.Image)) {
+          g.FillEllipse(
+            AppBrush,
+            e.X - (BrushRadius / 2),
+            e.Y - (BrushRadius / 2),
+            BrushRadius,
+            BrushRadius
+          );
 
-        //Image img = draw_area.BackgroundImage;
-        //Image img = Image.FromFile(@"bg_minions.jpg");
-        
-        /*canvas.DrawImage(
-          img,
-          new RectangleF(200F, 0F, 722F - 200F, 523F),
-          new RectangleF(200F, 0F, 722F - 200F, 523F),
-          GraphicsUnit.Pixel
-        );*/
+          g.SmoothingMode = SmoothingMode.AntiAlias;
+        }
+
+        draw_area.Invalidate();
       }
     }
 
     private void cleaner_Scroll(object sender, ScrollEventArgs e) {
-      canvas.FillRectangle(EraseBrush, 0, 0, cleaner.Value, 523);
+      using (Graphics g = Graphics.FromImage(draw_area.Image)) {
+        g.FillRectangle(EraseBrush, cleaner.Value, 0, 6, 523);
+      }
+      
+      draw_area.Invalidate();
+    }
+
+    private void button1_Click(object sender, EventArgs e) {
+      draw_area.Image.Save(@"C:\Users\luish\Pictures\Pintadito\save.png", ImageFormat.Png);
     }
   }
 }

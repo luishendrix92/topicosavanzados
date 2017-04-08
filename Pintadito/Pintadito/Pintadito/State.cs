@@ -8,6 +8,7 @@ namespace Pintadito {
     private static Color BrushColor = Color.FromArgb(26, Color.Black);
     public static Brush AppBrush = new SolidBrush(BrushColor);
     public static Brush EraseBrush = new SolidBrush(Color.White);
+    public static string CurrentImg = null;
 
     public static void ChangeOpacity(int opacity) {
       BrushColor = Color.FromArgb(
