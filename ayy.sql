@@ -63,3 +63,5 @@ create table rVuelos(
 create table rHotel(
 
 );
+
+SELECT * FROM rVuelos WHERE tabla = MiTabla;
