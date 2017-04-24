@@ -48,26 +48,25 @@ namespace Pintadito {
     private EventHandler SetColor(Color color) =>
       (sender, e) => { ChangeColor(color); };
 
-    private EventHandler SetImg(string filename) =>
-      (sender, e) => {
-        if (filename == CurrentImg) {
-          using (Graphics g = Graphics.FromImage(draw_area.Image)) {
-            g.DrawImage(
-              Image.FromFile(filename),
-              new Rectangle(0, 0, 722, 523),
-              new Rectangle(0, 0, 722, 523),
-              GraphicsUnit.Pixel
-            );
-
-            g.SmoothingMode = SmoothingMode.AntiAlias;
-          }
-        } else {
-          draw_area.Image = Image.FromFile(filename);
+    private EventHandler SetImg(string filename) => (sender, e) => {
+      using (Graphics g = Graphics.FromImage(draw_area.Image)) {
+        if (CurrentImg != filename) {
+          g.FillRectangle(EraseBrush, 0, 0, 722, 523);
         }
 
-        draw_area.Invalidate();
-        CurrentImg = filename;
-      };
+        g.DrawImage(
+          Image.FromFile(filename),
+          new Rectangle(0, 0, 722, 523),
+          new Rectangle(0, 0, 722, 523),
+          GraphicsUnit.Pixel
+        );
+
+        g.SmoothingMode = SmoothingMode.AntiAlias;
+      }
+
+      draw_area.Invalidate();
+      CurrentImg = filename;
+    };
 
     private void draw_area_MouseMove(object sender, MouseEventArgs e) {
       if (IsDrawing) {
@@ -95,8 +94,13 @@ namespace Pintadito {
       draw_area.Invalidate();
     }
 
-    private void button1_Click(object sender, EventArgs e) {
-      draw_area.Image.Save(@"C:\Users\luish\Pictures\Pintadito\save.png", ImageFormat.Png);
+    private void save_img_btn_Click(object sender, EventArgs e) {
+      SaveFileDialog sfd = new SaveFileDialog();
+      sfd.Filter = "Png Image|*.png";
+
+      if (sfd.ShowDialog() == DialogResult.OK) {
+        draw_area.Image.Save(sfd.FileName, ImageFormat.Png);
+      }
     }
   }
 }

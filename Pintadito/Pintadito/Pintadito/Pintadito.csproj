@@ -87,9 +87,6 @@
     <Content Include="cars.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="clojure-logo.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="planta.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

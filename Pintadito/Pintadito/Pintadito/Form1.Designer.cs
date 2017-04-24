@@ -23,6 +23,7 @@
     /// the contents of this method with the code editor.
     /// </summary>
     private void InitializeComponent() {
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
       this.pencil_black = new System.Windows.Forms.Button();
       this.pencil_pink = new System.Windows.Forms.Button();
       this.pencil_violet = new System.Windows.Forms.Button();
@@ -49,7 +50,7 @@
       this.btn_plant = new System.Windows.Forms.Button();
       this.btn_oldcar = new System.Windows.Forms.Button();
       this.draw_area = new System.Windows.Forms.PictureBox();
-      this.button1 = new System.Windows.Forms.Button();
+      this.save_img_btn = new System.Windows.Forms.Button();
       ((System.ComponentModel.ISupportInitialize)(this.opacity_control)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.radius_control)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.draw_area)).BeginInit();
@@ -57,61 +58,85 @@
       // 
       // pencil_black
       // 
+      this.pencil_black.BackColor = System.Drawing.Color.Transparent;
+      this.pencil_black.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pencil_black.BackgroundImage")));
+      this.pencil_black.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+      this.pencil_black.FlatAppearance.BorderSize = 0;
+      this.pencil_black.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.pencil_black.Location = new System.Drawing.Point(12, 12);
       this.pencil_black.Name = "pencil_black";
-      this.pencil_black.Size = new System.Drawing.Size(75, 23);
+      this.pencil_black.Size = new System.Drawing.Size(50, 50);
       this.pencil_black.TabIndex = 2;
-      this.pencil_black.Text = "Negro";
-      this.pencil_black.UseVisualStyleBackColor = true;
+      this.pencil_black.UseVisualStyleBackColor = false;
       // 
       // pencil_pink
       // 
-      this.pencil_pink.Location = new System.Drawing.Point(12, 41);
+      this.pencil_pink.BackColor = System.Drawing.Color.Transparent;
+      this.pencil_pink.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pencil_pink.BackgroundImage")));
+      this.pencil_pink.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+      this.pencil_pink.FlatAppearance.BorderSize = 0;
+      this.pencil_pink.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.pencil_pink.Location = new System.Drawing.Point(12, 348);
       this.pencil_pink.Name = "pencil_pink";
-      this.pencil_pink.Size = new System.Drawing.Size(75, 23);
+      this.pencil_pink.Size = new System.Drawing.Size(50, 50);
       this.pencil_pink.TabIndex = 3;
-      this.pencil_pink.Text = "Pink";
-      this.pencil_pink.UseVisualStyleBackColor = true;
+      this.pencil_pink.UseVisualStyleBackColor = false;
       // 
       // pencil_violet
       // 
-      this.pencil_violet.Location = new System.Drawing.Point(12, 70);
+      this.pencil_violet.BackColor = System.Drawing.Color.Transparent;
+      this.pencil_violet.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pencil_violet.BackgroundImage")));
+      this.pencil_violet.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+      this.pencil_violet.FlatAppearance.BorderSize = 0;
+      this.pencil_violet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.pencil_violet.Location = new System.Drawing.Point(12, 124);
       this.pencil_violet.Name = "pencil_violet";
-      this.pencil_violet.Size = new System.Drawing.Size(75, 23);
+      this.pencil_violet.Size = new System.Drawing.Size(50, 50);
       this.pencil_violet.TabIndex = 4;
-      this.pencil_violet.Text = "Violet";
-      this.pencil_violet.UseVisualStyleBackColor = true;
+      this.pencil_violet.UseVisualStyleBackColor = false;
       // 
       // pencil_white
       // 
-      this.pencil_white.Location = new System.Drawing.Point(12, 157);
+      this.pencil_white.BackColor = System.Drawing.Color.Transparent;
+      this.pencil_white.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pencil_white.BackgroundImage")));
+      this.pencil_white.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+      this.pencil_white.FlatAppearance.BorderSize = 0;
+      this.pencil_white.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.pencil_white.Location = new System.Drawing.Point(68, 292);
       this.pencil_white.Name = "pencil_white";
-      this.pencil_white.Size = new System.Drawing.Size(75, 23);
+      this.pencil_white.Size = new System.Drawing.Size(50, 50);
       this.pencil_white.TabIndex = 7;
-      this.pencil_white.Text = "White";
-      this.pencil_white.UseVisualStyleBackColor = true;
+      this.pencil_white.UseVisualStyleBackColor = false;
       // 
       // pencil_silver
       // 
-      this.pencil_silver.Location = new System.Drawing.Point(12, 128);
+      this.pencil_silver.BackColor = System.Drawing.Color.Transparent;
+      this.pencil_silver.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pencil_silver.BackgroundImage")));
+      this.pencil_silver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+      this.pencil_silver.FlatAppearance.BorderSize = 0;
+      this.pencil_silver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.pencil_silver.Location = new System.Drawing.Point(68, 14);
       this.pencil_silver.Name = "pencil_silver";
-      this.pencil_silver.Size = new System.Drawing.Size(75, 23);
+      this.pencil_silver.Size = new System.Drawing.Size(50, 50);
       this.pencil_silver.TabIndex = 6;
-      this.pencil_silver.Text = "Silver";
-      this.pencil_silver.UseVisualStyleBackColor = true;
+      this.pencil_silver.UseVisualStyleBackColor = false;
       // 
       // pencil_gold
       // 
-      this.pencil_gold.Location = new System.Drawing.Point(12, 99);
+      this.pencil_gold.BackColor = System.Drawing.Color.Transparent;
+      this.pencil_gold.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pencil_gold.BackgroundImage")));
+      this.pencil_gold.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+      this.pencil_gold.FlatAppearance.BorderSize = 0;
+      this.pencil_gold.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.pencil_gold.Location = new System.Drawing.Point(12, 68);
       this.pencil_gold.Name = "pencil_gold";
-      this.pencil_gold.Size = new System.Drawing.Size(75, 23);
+      this.pencil_gold.Size = new System.Drawing.Size(50, 50);
       this.pencil_gold.TabIndex = 5;
-      this.pencil_gold.Text = "Gold";
-      this.pencil_gold.UseVisualStyleBackColor = true;
+      this.pencil_gold.UseVisualStyleBackColor = false;
       // 
       // cleaner
       // 
-      this.cleaner.Location = new System.Drawing.Point(165, 538);
+      this.cleaner.Location = new System.Drawing.Point(136, 537);
       this.cleaner.Maximum = 730;
       this.cleaner.Name = "cleaner";
       this.cleaner.Size = new System.Drawing.Size(722, 22);
@@ -120,73 +145,101 @@
       // 
       // pencil_yellow
       // 
-      this.pencil_yellow.Location = new System.Drawing.Point(12, 333);
+      this.pencil_yellow.BackColor = System.Drawing.Color.Transparent;
+      this.pencil_yellow.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pencil_yellow.BackgroundImage")));
+      this.pencil_yellow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+      this.pencil_yellow.FlatAppearance.BorderSize = 0;
+      this.pencil_yellow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.pencil_yellow.Location = new System.Drawing.Point(68, 348);
       this.pencil_yellow.Name = "pencil_yellow";
-      this.pencil_yellow.Size = new System.Drawing.Size(75, 23);
+      this.pencil_yellow.Size = new System.Drawing.Size(50, 50);
       this.pencil_yellow.TabIndex = 14;
-      this.pencil_yellow.Text = "Yellow";
-      this.pencil_yellow.UseVisualStyleBackColor = true;
+      this.pencil_yellow.UseVisualStyleBackColor = false;
       // 
       // pencil_green
       // 
-      this.pencil_green.Location = new System.Drawing.Point(12, 304);
+      this.pencil_green.BackColor = System.Drawing.Color.Transparent;
+      this.pencil_green.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pencil_green.BackgroundImage")));
+      this.pencil_green.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+      this.pencil_green.FlatAppearance.BorderSize = 0;
+      this.pencil_green.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.pencil_green.Location = new System.Drawing.Point(12, 292);
       this.pencil_green.Name = "pencil_green";
-      this.pencil_green.Size = new System.Drawing.Size(75, 23);
+      this.pencil_green.Size = new System.Drawing.Size(50, 50);
       this.pencil_green.TabIndex = 13;
-      this.pencil_green.Text = "Green";
-      this.pencil_green.UseVisualStyleBackColor = true;
+      this.pencil_green.UseVisualStyleBackColor = false;
       // 
       // pencil_darkgreen
       // 
-      this.pencil_darkgreen.Location = new System.Drawing.Point(12, 275);
+      this.pencil_darkgreen.BackColor = System.Drawing.Color.Transparent;
+      this.pencil_darkgreen.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pencil_darkgreen.BackgroundImage")));
+      this.pencil_darkgreen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+      this.pencil_darkgreen.FlatAppearance.BorderSize = 0;
+      this.pencil_darkgreen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.pencil_darkgreen.Location = new System.Drawing.Point(12, 236);
       this.pencil_darkgreen.Name = "pencil_darkgreen";
-      this.pencil_darkgreen.Size = new System.Drawing.Size(75, 23);
+      this.pencil_darkgreen.Size = new System.Drawing.Size(50, 50);
       this.pencil_darkgreen.TabIndex = 12;
-      this.pencil_darkgreen.Text = "Dark Green";
-      this.pencil_darkgreen.UseVisualStyleBackColor = true;
+      this.pencil_darkgreen.UseVisualStyleBackColor = false;
       // 
       // pencil_sky
       // 
-      this.pencil_sky.Location = new System.Drawing.Point(12, 246);
+      this.pencil_sky.BackColor = System.Drawing.Color.Transparent;
+      this.pencil_sky.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pencil_sky.BackgroundImage")));
+      this.pencil_sky.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+      this.pencil_sky.FlatAppearance.BorderSize = 0;
+      this.pencil_sky.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.pencil_sky.Location = new System.Drawing.Point(12, 180);
       this.pencil_sky.Name = "pencil_sky";
-      this.pencil_sky.Size = new System.Drawing.Size(75, 23);
+      this.pencil_sky.Size = new System.Drawing.Size(50, 50);
       this.pencil_sky.TabIndex = 11;
-      this.pencil_sky.Text = "Sky Blue";
-      this.pencil_sky.UseVisualStyleBackColor = true;
+      this.pencil_sky.UseVisualStyleBackColor = false;
       // 
       // pencil_blue
       // 
-      this.pencil_blue.Location = new System.Drawing.Point(12, 217);
+      this.pencil_blue.BackColor = System.Drawing.Color.Transparent;
+      this.pencil_blue.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pencil_blue.BackgroundImage")));
+      this.pencil_blue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+      this.pencil_blue.FlatAppearance.BorderSize = 0;
+      this.pencil_blue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.pencil_blue.Location = new System.Drawing.Point(68, 124);
       this.pencil_blue.Name = "pencil_blue";
-      this.pencil_blue.Size = new System.Drawing.Size(75, 23);
+      this.pencil_blue.Size = new System.Drawing.Size(50, 50);
       this.pencil_blue.TabIndex = 10;
-      this.pencil_blue.Text = "Blue";
-      this.pencil_blue.UseVisualStyleBackColor = true;
+      this.pencil_blue.UseVisualStyleBackColor = false;
       // 
       // pencil_navy
       // 
-      this.pencil_navy.Location = new System.Drawing.Point(12, 188);
+      this.pencil_navy.BackColor = System.Drawing.Color.Transparent;
+      this.pencil_navy.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pencil_navy.BackgroundImage")));
+      this.pencil_navy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+      this.pencil_navy.FlatAppearance.BorderSize = 0;
+      this.pencil_navy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.pencil_navy.Location = new System.Drawing.Point(68, 68);
       this.pencil_navy.Name = "pencil_navy";
-      this.pencil_navy.Size = new System.Drawing.Size(75, 23);
+      this.pencil_navy.Size = new System.Drawing.Size(50, 50);
       this.pencil_navy.TabIndex = 9;
-      this.pencil_navy.Text = "Navy Blue";
-      this.pencil_navy.UseVisualStyleBackColor = true;
+      this.pencil_navy.UseVisualStyleBackColor = false;
       // 
       // pencil_orange
       // 
-      this.pencil_orange.Location = new System.Drawing.Point(12, 362);
+      this.pencil_orange.BackColor = System.Drawing.Color.Transparent;
+      this.pencil_orange.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pencil_orange.BackgroundImage")));
+      this.pencil_orange.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+      this.pencil_orange.FlatAppearance.BorderSize = 0;
+      this.pencil_orange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.pencil_orange.Location = new System.Drawing.Point(68, 236);
       this.pencil_orange.Name = "pencil_orange";
-      this.pencil_orange.Size = new System.Drawing.Size(75, 23);
+      this.pencil_orange.Size = new System.Drawing.Size(50, 50);
       this.pencil_orange.TabIndex = 15;
-      this.pencil_orange.Text = "Orange";
-      this.pencil_orange.UseVisualStyleBackColor = true;
+      this.pencil_orange.UseVisualStyleBackColor = false;
       // 
       // opacity_control
       // 
-      this.opacity_control.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.opacity_control.Location = new System.Drawing.Point(12, 456);
+      this.opacity_control.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.opacity_control.Location = new System.Drawing.Point(12, 444);
       this.opacity_control.Name = "opacity_control";
-      this.opacity_control.Size = new System.Drawing.Size(75, 25);
+      this.opacity_control.Size = new System.Drawing.Size(75, 36);
       this.opacity_control.TabIndex = 16;
       this.opacity_control.Value = new decimal(new int[] {
             10,
@@ -196,15 +249,15 @@
       // 
       // radius_control
       // 
-      this.radius_control.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.radius_control.Location = new System.Drawing.Point(12, 512);
+      this.radius_control.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.radius_control.Location = new System.Drawing.Point(12, 514);
       this.radius_control.Maximum = new decimal(new int[] {
             200,
             0,
             0,
             0});
       this.radius_control.Name = "radius_control";
-      this.radius_control.Size = new System.Drawing.Size(75, 25);
+      this.radius_control.Size = new System.Drawing.Size(75, 36);
       this.radius_control.TabIndex = 17;
       this.radius_control.Value = new decimal(new int[] {
             20,
@@ -215,111 +268,147 @@
       // label1
       // 
       this.label1.AutoSize = true;
-      this.label1.Location = new System.Drawing.Point(9, 440);
+      this.label1.BackColor = System.Drawing.Color.Transparent;
+      this.label1.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label1.Location = new System.Drawing.Point(12, 413);
       this.label1.Name = "label1";
-      this.label1.Size = new System.Drawing.Size(43, 13);
+      this.label1.Size = new System.Drawing.Size(73, 28);
       this.label1.TabIndex = 18;
       this.label1.Text = "Opacity";
       // 
       // label2
       // 
       this.label2.AutoSize = true;
-      this.label2.Location = new System.Drawing.Point(9, 496);
+      this.label2.BackColor = System.Drawing.Color.Transparent;
+      this.label2.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label2.Location = new System.Drawing.Point(12, 483);
       this.label2.Name = "label2";
-      this.label2.Size = new System.Drawing.Size(57, 13);
+      this.label2.Size = new System.Drawing.Size(96, 28);
       this.label2.TabIndex = 19;
       this.label2.Text = "Brush Size";
       // 
       // pencil_red
       // 
-      this.pencil_red.Location = new System.Drawing.Point(12, 391);
+      this.pencil_red.BackColor = System.Drawing.Color.Transparent;
+      this.pencil_red.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pencil_red.BackgroundImage")));
+      this.pencil_red.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+      this.pencil_red.FlatAppearance.BorderSize = 0;
+      this.pencil_red.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.pencil_red.Location = new System.Drawing.Point(68, 180);
       this.pencil_red.Name = "pencil_red";
-      this.pencil_red.Size = new System.Drawing.Size(75, 23);
+      this.pencil_red.Size = new System.Drawing.Size(50, 50);
       this.pencil_red.TabIndex = 20;
-      this.pencil_red.Text = "Crimson Red";
-      this.pencil_red.UseVisualStyleBackColor = true;
+      this.pencil_red.UseVisualStyleBackColor = false;
       // 
       // btn_heart
       // 
-      this.btn_heart.Location = new System.Drawing.Point(909, 157);
+      this.btn_heart.BackColor = System.Drawing.Color.White;
+      this.btn_heart.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_heart.BackgroundImage")));
+      this.btn_heart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+      this.btn_heart.FlatAppearance.BorderSize = 2;
+      this.btn_heart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.btn_heart.Location = new System.Drawing.Point(864, 343);
       this.btn_heart.Name = "btn_heart";
-      this.btn_heart.Size = new System.Drawing.Size(75, 23);
+      this.btn_heart.Size = new System.Drawing.Size(90, 60);
       this.btn_heart.TabIndex = 26;
-      this.btn_heart.Text = "Harry Potter";
-      this.btn_heart.UseVisualStyleBackColor = true;
+      this.btn_heart.UseVisualStyleBackColor = false;
       // 
       // btn_satellite
       // 
-      this.btn_satellite.Location = new System.Drawing.Point(909, 128);
+      this.btn_satellite.BackColor = System.Drawing.Color.White;
+      this.btn_satellite.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_satellite.BackgroundImage")));
+      this.btn_satellite.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+      this.btn_satellite.FlatAppearance.BorderSize = 2;
+      this.btn_satellite.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.btn_satellite.Location = new System.Drawing.Point(864, 278);
       this.btn_satellite.Name = "btn_satellite";
-      this.btn_satellite.Size = new System.Drawing.Size(75, 23);
+      this.btn_satellite.Size = new System.Drawing.Size(90, 60);
       this.btn_satellite.TabIndex = 25;
-      this.btn_satellite.Text = "Minions";
-      this.btn_satellite.UseVisualStyleBackColor = true;
+      this.btn_satellite.UseVisualStyleBackColor = false;
       // 
       // btn_chick
       // 
-      this.btn_chick.Location = new System.Drawing.Point(909, 99);
+      this.btn_chick.BackColor = System.Drawing.Color.White;
+      this.btn_chick.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_chick.BackgroundImage")));
+      this.btn_chick.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+      this.btn_chick.FlatAppearance.BorderSize = 2;
+      this.btn_chick.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.btn_chick.Location = new System.Drawing.Point(864, 146);
       this.btn_chick.Name = "btn_chick";
-      this.btn_chick.Size = new System.Drawing.Size(75, 23);
+      this.btn_chick.Size = new System.Drawing.Size(90, 60);
       this.btn_chick.TabIndex = 24;
-      this.btn_chick.Text = "Homer";
-      this.btn_chick.UseVisualStyleBackColor = true;
+      this.btn_chick.UseVisualStyleBackColor = false;
       // 
       // btn_cars
       // 
-      this.btn_cars.Location = new System.Drawing.Point(909, 70);
+      this.btn_cars.BackColor = System.Drawing.Color.White;
+      this.btn_cars.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_cars.BackgroundImage")));
+      this.btn_cars.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+      this.btn_cars.FlatAppearance.BorderSize = 2;
+      this.btn_cars.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.btn_cars.Location = new System.Drawing.Point(864, 212);
       this.btn_cars.Name = "btn_cars";
-      this.btn_cars.Size = new System.Drawing.Size(75, 23);
+      this.btn_cars.Size = new System.Drawing.Size(90, 60);
       this.btn_cars.TabIndex = 23;
-      this.btn_cars.Text = "McQueen";
-      this.btn_cars.UseVisualStyleBackColor = true;
+      this.btn_cars.UseVisualStyleBackColor = false;
       // 
       // btn_plant
       // 
-      this.btn_plant.Location = new System.Drawing.Point(909, 41);
+      this.btn_plant.BackColor = System.Drawing.Color.White;
+      this.btn_plant.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_plant.BackgroundImage")));
+      this.btn_plant.FlatAppearance.BorderSize = 2;
+      this.btn_plant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.btn_plant.Location = new System.Drawing.Point(864, 80);
       this.btn_plant.Name = "btn_plant";
-      this.btn_plant.Size = new System.Drawing.Size(75, 23);
+      this.btn_plant.Size = new System.Drawing.Size(90, 60);
       this.btn_plant.TabIndex = 22;
-      this.btn_plant.Text = "Whale";
-      this.btn_plant.UseVisualStyleBackColor = true;
+      this.btn_plant.UseVisualStyleBackColor = false;
       // 
       // btn_oldcar
       // 
-      this.btn_oldcar.Location = new System.Drawing.Point(909, 12);
+      this.btn_oldcar.BackColor = System.Drawing.Color.White;
+      this.btn_oldcar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_oldcar.BackgroundImage")));
+      this.btn_oldcar.FlatAppearance.BorderSize = 2;
+      this.btn_oldcar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.btn_oldcar.Location = new System.Drawing.Point(864, 14);
       this.btn_oldcar.Name = "btn_oldcar";
-      this.btn_oldcar.Size = new System.Drawing.Size(75, 23);
+      this.btn_oldcar.Size = new System.Drawing.Size(90, 60);
       this.btn_oldcar.TabIndex = 21;
-      this.btn_oldcar.Text = "Tree";
-      this.btn_oldcar.UseVisualStyleBackColor = true;
+      this.btn_oldcar.UseVisualStyleBackColor = false;
       // 
       // draw_area
       // 
       this.draw_area.BackColor = System.Drawing.Color.White;
-      this.draw_area.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-      this.draw_area.Location = new System.Drawing.Point(165, 12);
+      this.draw_area.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+      this.draw_area.Location = new System.Drawing.Point(136, 14);
       this.draw_area.Name = "draw_area";
       this.draw_area.Size = new System.Drawing.Size(722, 523);
       this.draw_area.TabIndex = 0;
       this.draw_area.TabStop = false;
       this.draw_area.MouseMove += new System.Windows.Forms.MouseEventHandler(this.draw_area_MouseMove);
       // 
-      // button1
+      // save_img_btn
       // 
-      this.button1.Location = new System.Drawing.Point(909, 245);
-      this.button1.Name = "button1";
-      this.button1.Size = new System.Drawing.Size(75, 23);
-      this.button1.TabIndex = 27;
-      this.button1.Text = "Save";
-      this.button1.UseVisualStyleBackColor = true;
-      this.button1.Click += new System.EventHandler(this.button1_Click);
+      this.save_img_btn.BackColor = System.Drawing.Color.Transparent;
+      this.save_img_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("save_img_btn.BackgroundImage")));
+      this.save_img_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+      this.save_img_btn.FlatAppearance.BorderSize = 0;
+      this.save_img_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.save_img_btn.Location = new System.Drawing.Point(877, 483);
+      this.save_img_btn.Name = "save_img_btn";
+      this.save_img_btn.Size = new System.Drawing.Size(75, 82);
+      this.save_img_btn.TabIndex = 27;
+      this.save_img_btn.UseVisualStyleBackColor = false;
+      this.save_img_btn.Click += new System.EventHandler(this.save_img_btn_Click);
       // 
       // Form1
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(996, 571);
-      this.Controls.Add(this.button1);
+      this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+      this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+      this.ClientSize = new System.Drawing.Size(964, 571);
+      this.Controls.Add(this.save_img_btn);
       this.Controls.Add(this.draw_area);
       this.Controls.Add(this.btn_heart);
       this.Controls.Add(this.btn_satellite);
@@ -347,7 +436,7 @@
       this.Controls.Add(this.pencil_pink);
       this.Controls.Add(this.pencil_black);
       this.Name = "Form1";
-      this.Text = "Form1";
+      this.Text = "Pintadito 1.0";
       ((System.ComponentModel.ISupportInitialize)(this.opacity_control)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.radius_control)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.draw_area)).EndInit();
@@ -383,7 +472,7 @@
     private System.Windows.Forms.Button btn_plant;
     private System.Windows.Forms.Button btn_oldcar;
     private System.Windows.Forms.PictureBox draw_area;
-    private System.Windows.Forms.Button button1;
+    private System.Windows.Forms.Button save_img_btn;
   }
 }
 
