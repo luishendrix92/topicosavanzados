@@ -29,3 +29,9 @@ C:\Users\luish\Documents\GitHub\topicosavanzadosITT\Pintadito\Pintadito\Pintadit
 C:\Users\luish\Documents\GitHub\topicosavanzadosITT\Pintadito\Pintadito\Pintadito\obj\Release\Pintadito.csproj.GenerateResource.Cache
 C:\Users\luish\Documents\GitHub\topicosavanzadosITT\Pintadito\Pintadito\Pintadito\obj\Release\Pintadito.exe
 C:\Users\luish\Documents\GitHub\topicosavanzadosITT\Pintadito\Pintadito\Pintadito\obj\Release\Pintadito.pdb
+C:\Users\luish\Documents\GitHub\topicosavanzadosITT\Pintadito\Pintadito\Pintadito\bin\Release\emoji_cool.png
+C:\Users\luish\Documents\GitHub\topicosavanzadosITT\Pintadito\Pintadito\Pintadito\bin\Release\emoji_crying.png
+C:\Users\luish\Documents\GitHub\topicosavanzadosITT\Pintadito\Pintadito\Pintadito\bin\Release\emoji_fear.png
+C:\Users\luish\Documents\GitHub\topicosavanzadosITT\Pintadito\Pintadito\Pintadito\bin\Release\emoji_hearts.png
+C:\Users\luish\Documents\GitHub\topicosavanzadosITT\Pintadito\Pintadito\Pintadito\bin\Release\emoji_tears.png
+C:\Users\luish\Documents\GitHub\topicosavanzadosITT\Pintadito\Pintadito\Pintadito\bin\Release\emoji_wink.png

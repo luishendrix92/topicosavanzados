@@ -51,6 +51,12 @@
       this.btn_oldcar = new System.Windows.Forms.Button();
       this.draw_area = new System.Windows.Forms.PictureBox();
       this.save_img_btn = new System.Windows.Forms.Button();
+      this.btn_cool = new System.Windows.Forms.Button();
+      this.btn_crying = new System.Windows.Forms.Button();
+      this.btn_hearts = new System.Windows.Forms.Button();
+      this.btn_fear = new System.Windows.Forms.Button();
+      this.btn_wink = new System.Windows.Forms.Button();
+      this.btn_tears = new System.Windows.Forms.Button();
       ((System.ComponentModel.ISupportInitialize)(this.opacity_control)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.radius_control)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.draw_area)).BeginInit();
@@ -385,6 +391,7 @@
       this.draw_area.Size = new System.Drawing.Size(722, 523);
       this.draw_area.TabIndex = 0;
       this.draw_area.TabStop = false;
+      this.draw_area.Click += new System.EventHandler(this.draw_area_Click);
       this.draw_area.MouseMove += new System.Windows.Forms.MouseEventHandler(this.draw_area_MouseMove);
       // 
       // save_img_btn
@@ -401,13 +408,97 @@
       this.save_img_btn.UseVisualStyleBackColor = false;
       this.save_img_btn.Click += new System.EventHandler(this.save_img_btn_Click);
       // 
+      // btn_cool
+      // 
+      this.btn_cool.BackColor = System.Drawing.Color.Transparent;
+      this.btn_cool.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_cool.BackgroundImage")));
+      this.btn_cool.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+      this.btn_cool.FlatAppearance.BorderSize = 0;
+      this.btn_cool.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.btn_cool.Location = new System.Drawing.Point(303, 572);
+      this.btn_cool.Name = "btn_cool";
+      this.btn_cool.Size = new System.Drawing.Size(50, 50);
+      this.btn_cool.TabIndex = 28;
+      this.btn_cool.UseVisualStyleBackColor = false;
+      // 
+      // btn_crying
+      // 
+      this.btn_crying.BackColor = System.Drawing.Color.Transparent;
+      this.btn_crying.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_crying.BackgroundImage")));
+      this.btn_crying.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+      this.btn_crying.FlatAppearance.BorderSize = 0;
+      this.btn_crying.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.btn_crying.Location = new System.Drawing.Point(359, 572);
+      this.btn_crying.Name = "btn_crying";
+      this.btn_crying.Size = new System.Drawing.Size(50, 50);
+      this.btn_crying.TabIndex = 29;
+      this.btn_crying.UseVisualStyleBackColor = false;
+      // 
+      // btn_hearts
+      // 
+      this.btn_hearts.BackColor = System.Drawing.Color.Transparent;
+      this.btn_hearts.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_hearts.BackgroundImage")));
+      this.btn_hearts.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+      this.btn_hearts.FlatAppearance.BorderSize = 0;
+      this.btn_hearts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.btn_hearts.Location = new System.Drawing.Point(471, 572);
+      this.btn_hearts.Name = "btn_hearts";
+      this.btn_hearts.Size = new System.Drawing.Size(50, 50);
+      this.btn_hearts.TabIndex = 31;
+      this.btn_hearts.UseVisualStyleBackColor = false;
+      // 
+      // btn_fear
+      // 
+      this.btn_fear.BackColor = System.Drawing.Color.Transparent;
+      this.btn_fear.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_fear.BackgroundImage")));
+      this.btn_fear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+      this.btn_fear.FlatAppearance.BorderSize = 0;
+      this.btn_fear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.btn_fear.Location = new System.Drawing.Point(415, 572);
+      this.btn_fear.Name = "btn_fear";
+      this.btn_fear.Size = new System.Drawing.Size(50, 50);
+      this.btn_fear.TabIndex = 30;
+      this.btn_fear.UseVisualStyleBackColor = false;
+      // 
+      // btn_wink
+      // 
+      this.btn_wink.BackColor = System.Drawing.Color.Transparent;
+      this.btn_wink.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_wink.BackgroundImage")));
+      this.btn_wink.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+      this.btn_wink.FlatAppearance.BorderSize = 0;
+      this.btn_wink.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.btn_wink.Location = new System.Drawing.Point(583, 572);
+      this.btn_wink.Name = "btn_wink";
+      this.btn_wink.Size = new System.Drawing.Size(50, 50);
+      this.btn_wink.TabIndex = 33;
+      this.btn_wink.UseVisualStyleBackColor = false;
+      // 
+      // btn_tears
+      // 
+      this.btn_tears.BackColor = System.Drawing.Color.Transparent;
+      this.btn_tears.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_tears.BackgroundImage")));
+      this.btn_tears.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+      this.btn_tears.FlatAppearance.BorderSize = 0;
+      this.btn_tears.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.btn_tears.Location = new System.Drawing.Point(527, 572);
+      this.btn_tears.Name = "btn_tears";
+      this.btn_tears.Size = new System.Drawing.Size(50, 50);
+      this.btn_tears.TabIndex = 32;
+      this.btn_tears.UseVisualStyleBackColor = false;
+      // 
       // Form1
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
       this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-      this.ClientSize = new System.Drawing.Size(964, 571);
+      this.ClientSize = new System.Drawing.Size(964, 634);
+      this.Controls.Add(this.btn_wink);
+      this.Controls.Add(this.btn_tears);
+      this.Controls.Add(this.btn_hearts);
+      this.Controls.Add(this.btn_fear);
+      this.Controls.Add(this.btn_crying);
+      this.Controls.Add(this.btn_cool);
       this.Controls.Add(this.save_img_btn);
       this.Controls.Add(this.draw_area);
       this.Controls.Add(this.btn_heart);
@@ -473,6 +564,12 @@
     private System.Windows.Forms.Button btn_oldcar;
     private System.Windows.Forms.PictureBox draw_area;
     private System.Windows.Forms.Button save_img_btn;
+    private System.Windows.Forms.Button btn_cool;
+    private System.Windows.Forms.Button btn_crying;
+    private System.Windows.Forms.Button btn_hearts;
+    private System.Windows.Forms.Button btn_fear;
+    private System.Windows.Forms.Button btn_wink;
+    private System.Windows.Forms.Button btn_tears;
   }
 }
 

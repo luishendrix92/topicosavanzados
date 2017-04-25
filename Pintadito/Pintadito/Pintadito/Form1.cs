@@ -31,6 +31,13 @@ namespace Pintadito {
       pencil_yellow.Click += SetColor(Color.Yellow);
       pencil_red.Click += SetColor(Color.Red);
 
+      btn_cool.Click += SetSticker("emoji_cool.png");
+      btn_crying.Click += SetSticker("emoji_crying.png");
+      btn_fear.Click += SetSticker("emoji_fear.png");
+      btn_hearts.Click += SetSticker("emoji_hearts.png");
+      btn_tears.Click += SetSticker("emoji_tears.png");
+      btn_wink.Click += SetSticker("emoji_wink.png");
+
       btn_cars.Click += SetImg("cars.png");
       btn_chick.Click += SetImg("pollo.png");
       btn_heart.Click += SetImg("tacos.png");
@@ -44,6 +51,9 @@ namespace Pintadito {
       radius_control.ValueChanged += (sender, e) =>
         BrushRadius = (int) radius_control.Value;
     }
+
+    private EventHandler SetSticker(String sticker) =>
+      (sender, e) => { CurrentSticker = sticker; };
 
     private EventHandler SetColor(Color color) =>
       (sender, e) => { ChangeColor(color); };
@@ -60,8 +70,6 @@ namespace Pintadito {
           new Rectangle(0, 0, 722, 523),
           GraphicsUnit.Pixel
         );
-
-        g.SmoothingMode = SmoothingMode.AntiAlias;
       }
 
       draw_area.Invalidate();
@@ -69,6 +77,8 @@ namespace Pintadito {
     };
 
     private void draw_area_MouseMove(object sender, MouseEventArgs e) {
+      Xcoord = e.X; Ycoord = e.Y;
+
       if (IsDrawing) {
         using (Graphics g = Graphics.FromImage(draw_area.Image)) {
           g.FillEllipse(
@@ -96,10 +106,30 @@ namespace Pintadito {
 
     private void save_img_btn_Click(object sender, EventArgs e) {
       SaveFileDialog sfd = new SaveFileDialog();
+
       sfd.Filter = "Png Image|*.png";
 
       if (sfd.ShowDialog() == DialogResult.OK) {
         draw_area.Image.Save(sfd.FileName, ImageFormat.Png);
+      }
+    }
+
+    private void draw_area_Click(object sender, EventArgs e) {
+      if (CurrentSticker != null) {
+        var sticker = Image.FromFile(CurrentSticker);
+
+        using (Graphics g = Graphics.FromImage(draw_area.Image)) {
+          g.DrawImage(
+            sticker,
+            new Point(
+              Xcoord - (sticker.Size.Width / 2),
+              Ycoord - (sticker.Size.Height / 2)
+            )
+          );
+        }
+
+        draw_area.Invalidate();
+        CurrentSticker = null;
       }
     }
   }
