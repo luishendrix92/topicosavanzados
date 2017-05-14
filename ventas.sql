@@ -94,8 +94,8 @@ SELECT * FROM Libro WHERE precio > (
 SELECT * FROM Vendedor WHERE id_vendedor = (
   SELECT id_vendedor FROM Factura WHERE folio = (
     SELECT folio FROM Venta WHERE cantidad = (
-	  SELECT MAX(cantidad) FROM Venta
-	)
+	    SELECT MAX(cantidad) FROM Venta
+	  )
   )
 )
 
@@ -104,8 +104,8 @@ SELECT id_libro, SUM(cantidad) as total_cantidad FROM Venta GROUP BY id_libro
 SELECT * FROM Vendedor WHERE id_vendedor IN (
   SELECT id_vendedor FROM Factura WHERE folio IN (
     SELECT folio FROM Venta WHERE id_libro = (
-	  SELECT id_libro FROM Libro WHERE titulo = 'SQL Server'
-	)
+	    SELECT id_libro FROM Libro WHERE titulo = 'SQL Server'
+	  )
   )
 )
 
