@@ -70,3 +70,49 @@ INSERT INTO Venta VALUES
 	(1012, 2, 130),
 	(1012, 1, 250),
 	(1013, 3, 400)
+
+SELECT *, precio * 0.75 AS con_descuento FROM Libro
+
+SELECT * FROM Factura WHERE id_vendedor = (
+  SELECT id_vendedor FROM Vendedor WHERE nombre = 'Ramos'
+)
+
+SELECT * FROM Libro ORDER BY autor;
+
+SELECT * FROM Venta WHERE id_libro = (
+  SELECT id_libro FROM Libro WHERE titulo = 'Base de datos'
+)
+
+SELECT * FROM Libro WHERE precio < (
+  SELECT AVG(precio) FROM Libro
+)
+
+SELECT * FROM Libro WHERE precio > (
+  SELECT AVG(precio) FROM Libro
+)
+
+SELECT * FROM Vendedor WHERE id_vendedor = (
+  SELECT id_vendedor FROM Factura WHERE folio = (
+    SELECT folio FROM Venta WHERE cantidad = (
+	  SELECT MAX(cantidad) FROM Venta
+	)
+  )
+)
+
+SELECT id_libro, SUM(cantidad) as total_cantidad FROM Venta GROUP BY id_libro
+
+SELECT * FROM Vendedor WHERE id_vendedor IN (
+  SELECT id_vendedor FROM Factura WHERE folio IN (
+    SELECT folio FROM Venta WHERE id_libro = (
+	  SELECT id_libro FROM Libro WHERE titulo = 'SQL Server'
+	)
+  )
+)
+
+-- Aternativa con INNER JOIN
+-------------------------------------------------------------------
+-- SELECT Vendedor.* FROM Vendedor
+-- INNER JOIN Factura ON Vendedor.id_vendedor = Factura.id_vendedor
+-- INNER JOIN Venta ON Factura.folio = Venta.folio
+-- INNER JOIN Libro ON Venta.id_libro = Libro.id_libro
+-- WHERE Libro.titulo = 'SQL Server'
