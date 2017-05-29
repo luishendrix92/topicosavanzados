@@ -1,55 +1,42 @@
 (ns bloqz.core
-  (:require [bloqz.logic  :refer [winning-position can-move?]]
-            [bloqz.helpers :refer [add-points offsets]]
-            [reagent.core :as r]))
+  (:require [bloqz.events    :as evts]
+            [bloqz.gamestate :as s]
+            [reagent.core    :as r]))
 
-;; Sample Level 1 | id 0 is the red block
-(def sample-level (r/atom [{:id 0 :type :horizontal :x 1 :y 2}
-                           {:id 1 :type :horizontal :x 0 :y 3}
-                           {:id 2 :type :horizontal :x 2 :y 5}
-                           {:id 3 :type :vertical   :x 3 :y 1}
-                           {:id 4 :type :vertical   :x 4 :y 1}
-                           {:id 5 :type :vertical   :x 2 :y 3}
-                           {:id 6 :type :vertical   :x 1 :y 4}]))
+;; Changes the background of the block with the id of 0 to a
+;; shade of red. It indicates that it's the important block.
+;; bg :: Map -> Int -> Map
+(defn bg [style id]
+  (if (zero? id)
+    (assoc style :background "#F31D2F")
+    style))
 
-(defn next-level []
-  (js/alert "Game Won!"))
+;; vertical-block :: Atom -> Int -> Int -> Int -> Int -> Hiccup
+(defn vertical-block [level x y id size]
+  [:div.vertb {:style (bg {:top    (* y 50)
+                           :left   (* x 50)
+                            :height (* size 50)} id)}
+   [:button.move-up   {:on-click (evts/attempt-move level :up   id)} "⬆️"]
+   [:button.move-down {:on-click (evts/attempt-move level :down id)} "⬇️"]])
 
-(defn move-block [id direction]
-  (case direction
-    :right (swap! sample-level update-in [id :x] inc)
-    :left  (swap! sample-level update-in [id :x] dec)
-    :up    (swap! sample-level update-in [id :y] dec)
-    :down  (swap! sample-level update-in [id :y] inc)))
+;; horizontal-block :: Atom -> Int -> Int -> Int -> Int -> Hiccup
+(defn horizontal-block [level x y id size]
+  [:div.horb {:style (bg {:top   (* y 50)
+                          :left  (* x 50)
+                          :width (* size 50)} id)}
+   [:button.move-left  {:on-click (evts/attempt-move level :left  id)} "⬅️"]
+   [:button.move-right {:on-click (evts/attempt-move level :right id)} "➡"]])
 
-(defn attempt-move [direction id]
-  (fn [evt]
-    (let [block       (nth @sample-level id)
-          destination (add-points (direction offsets) block)
-          valid-move? (can-move? block destination @sample-level)
-          could-win?  (and (= (select-keys block [:x :y]) winning-position)
-                           (= direction :right)
-                           (zero? id))]
-      (cond
-        (and valid-move? could-win?) (next-level)
-        valid-move?                  (move-block id direction)
-        :else                        (js/console.log "Invalid move")))))
-
-(defn vertical-block [x y id]
-  [:div.vertb {:style {:top (* y 50) :left (* x 50)}}
-   [:button.move-up {:on-click (attempt-move :up id)} "U"]
-   [:button.move-down {:on-click (attempt-move :down id)} "D"]])
-
-(defn horizontal-block [x y id]
-  [:div.horb {:style {:top (* y 50) :left (* x 50)}}
-   [:button.move-left {:on-click (attempt-move :left id)} "L"]
-   [:button.move-right {:on-click (attempt-move :right id)} "R"]])
-
-(defn main []
-  [:div.game
-    (for [{id :id x :x y :y t :type} @sample-level]
+;; main :: Hiccup
+(defn main [level]
+  [:div.wrapper
+   [:div.ui-state.chalkboard
+    [:h2 (str "Puzzle: " (:lvl @s/ui-state)
+              " | Moves: " (:moves @s/ui-state))]]
+   [:div.game.chalkboard
+    (for [{id :id x :x y :y t :type s :size} @level]
       (if (= t :vertical)
-        ^{:key id} [vertical-block x y id]
-        ^{:key id} [horizontal-block x y id]))])
+        ^{:key id} [vertical-block   level x y id s]
+        ^{:key id} [horizontal-block level x y id s]))]])
 
-(r/render [main] (js/document.querySelector "#app"))
+(r/render [main s/board-level] (js/document.querySelector "#app"))
