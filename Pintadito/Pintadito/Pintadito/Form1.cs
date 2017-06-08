@@ -150,7 +150,7 @@ namespace Pintadito {
         }
 
         draw_area.Invalidate();
-	// Comment line to allow multiple inserts
+      	// Comment line to allow multiple inserts
         CurrentSticker = null;
       }
     }
