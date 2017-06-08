@@ -1,0 +1,7 @@
+C:\Users\luish\Documents\GitHub\topicosavanzadosITT\Teclas\Teclas\obj\Debug\Teclas.csprojResolveAssemblyReference.cache
+C:\Users\luish\Documents\GitHub\topicosavanzadosITT\Teclas\Teclas\obj\Debug\Teclas.UserControl1.resources
+C:\Users\luish\Documents\GitHub\topicosavanzadosITT\Teclas\Teclas\obj\Debug\Teclas.csproj.GenerateResource.Cache
+C:\Users\luish\Documents\GitHub\topicosavanzadosITT\Teclas\Teclas\bin\Debug\Teclas.dll
+C:\Users\luish\Documents\GitHub\topicosavanzadosITT\Teclas\Teclas\bin\Debug\Teclas.pdb
+C:\Users\luish\Documents\GitHub\topicosavanzadosITT\Teclas\Teclas\obj\Debug\Teclas.dll
+C:\Users\luish\Documents\GitHub\topicosavanzadosITT\Teclas\Teclas\obj\Debug\Teclas.pdb
