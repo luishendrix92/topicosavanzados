@@ -1,0 +1,4 @@
+C:\Users\luish\Documents\GitHub\topicosavanzadosITT\FuncUtils\FuncUtils\bin\Debug\FuncUtils.dll
+C:\Users\luish\Documents\GitHub\topicosavanzadosITT\FuncUtils\FuncUtils\bin\Debug\FuncUtils.pdb
+C:\Users\luish\Documents\GitHub\topicosavanzadosITT\FuncUtils\FuncUtils\obj\Debug\FuncUtils.dll
+C:\Users\luish\Documents\GitHub\topicosavanzadosITT\FuncUtils\FuncUtils\obj\Debug\FuncUtils.pdb

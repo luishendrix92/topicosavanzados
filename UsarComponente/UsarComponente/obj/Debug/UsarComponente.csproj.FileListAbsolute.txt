@@ -1,0 +1,10 @@
+C:\Users\luish\Documents\GitHub\topicosavanzadosITT\UsarComponente\UsarComponente\bin\Debug\UsarComponente.exe.config
+C:\Users\luish\Documents\GitHub\topicosavanzadosITT\UsarComponente\UsarComponente\bin\Debug\UsarComponente.exe
+C:\Users\luish\Documents\GitHub\topicosavanzadosITT\UsarComponente\UsarComponente\bin\Debug\UsarComponente.pdb
+C:\Users\luish\Documents\GitHub\topicosavanzadosITT\UsarComponente\UsarComponente\obj\Debug\UsarComponente.csprojResolveAssemblyReference.cache
+C:\Users\luish\Documents\GitHub\topicosavanzadosITT\UsarComponente\UsarComponente\obj\Debug\UsarComponente.Form1.resources
+C:\Users\luish\Documents\GitHub\topicosavanzadosITT\UsarComponente\UsarComponente\obj\Debug\UsarComponente.Properties.Resources.resources
+C:\Users\luish\Documents\GitHub\topicosavanzadosITT\UsarComponente\UsarComponente\obj\Debug\Teclas.UserControl1.resources
+C:\Users\luish\Documents\GitHub\topicosavanzadosITT\UsarComponente\UsarComponente\obj\Debug\UsarComponente.csproj.GenerateResource.Cache
+C:\Users\luish\Documents\GitHub\topicosavanzadosITT\UsarComponente\UsarComponente\obj\Debug\UsarComponente.exe
+C:\Users\luish\Documents\GitHub\topicosavanzadosITT\UsarComponente\UsarComponente\obj\Debug\UsarComponente.pdb

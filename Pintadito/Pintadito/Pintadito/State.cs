@@ -1,5 +1,4 @@
-﻿usectangle(EraseBrush, cleaner.Value, 0, 6, 523);
-using System;
+﻿using System.Drawing;
 
 namespace Pintadito {
   public static class State {

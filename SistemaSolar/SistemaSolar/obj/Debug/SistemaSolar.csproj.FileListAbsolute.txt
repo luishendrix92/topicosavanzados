@@ -1,0 +1,9 @@
+C:\Users\luish\Documents\GitHub\topicosavanzadosITT\SistemaSolar\SistemaSolar\bin\Debug\SistemaSolar.exe.config
+C:\Users\luish\Documents\GitHub\topicosavanzadosITT\SistemaSolar\SistemaSolar\bin\Debug\SistemaSolar.exe
+C:\Users\luish\Documents\GitHub\topicosavanzadosITT\SistemaSolar\SistemaSolar\bin\Debug\SistemaSolar.pdb
+C:\Users\luish\Documents\GitHub\topicosavanzadosITT\SistemaSolar\SistemaSolar\obj\Debug\SistemaSolar.csprojResolveAssemblyReference.cache
+C:\Users\luish\Documents\GitHub\topicosavanzadosITT\SistemaSolar\SistemaSolar\obj\Debug\SistemaSolar.Form1.resources
+C:\Users\luish\Documents\GitHub\topicosavanzadosITT\SistemaSolar\SistemaSolar\obj\Debug\SistemaSolar.Properties.Resources.resources
+C:\Users\luish\Documents\GitHub\topicosavanzadosITT\SistemaSolar\SistemaSolar\obj\Debug\SistemaSolar.csproj.GenerateResource.Cache
+C:\Users\luish\Documents\GitHub\topicosavanzadosITT\SistemaSolar\SistemaSolar\obj\Debug\SistemaSolar.exe
+C:\Users\luish\Documents\GitHub\topicosavanzadosITT\SistemaSolar\SistemaSolar\obj\Debug\SistemaSolar.pdb
